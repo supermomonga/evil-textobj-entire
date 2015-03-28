@@ -1,0 +1,5 @@
+
+## evil-textobj-entire
+
+Entire text object for evil
+
