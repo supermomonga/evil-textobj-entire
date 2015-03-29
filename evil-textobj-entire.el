@@ -27,35 +27,21 @@
 (require 'evil)
 
 (defgroup evil-textobj-entire nil
-  "Text object entire for Evil"
+  "Text object entire buffer for Evil"
   :prefix "evil-textobj-entire-"
   :group 'evil)
 
-(defcustom evil-textobj-entire-i-key "e"
-  "Keys for evil-inner-entire"
-  :type 'string
-  :group 'evil-textobj-entire)
-(defcustom evil-textobj-entire-a-key "e"
-  "Keys for evil-a-entire"
+(defcustom evil-textobj-entire-key "e"
+  "Key for evil-inner-entire"
   :type 'string
   :group 'evil-textobj-entire)
 
-(defun evil-entire-range (count beg end type &optional inclusive)
+(evil-define-text-object evil-entire-entire-buffer (count &optional beg end type)
+  "Select range entire a character by which the command is followed."
   (evil-range (point-min) (point-max)))
 
-(evil-define-text-object evil-a-entire (count &optional beg end type)
-  "Select range entire a character by which the command is followed."
-  (evil-entire-range count beg end type t))
-(evil-define-text-object evil-inner-entire (count &optional beg end type)
-  "Select inner range entire a character by which the command is followed."
-  (evil-entire-range count beg end type))
-
-(define-key evil-outer-text-objects-map evil-textobj-entire-a-key
-  'evil-an-entire)
-(define-key evil-inner-text-objects-map evil-textobj-entire-i-key
-  'evil-inner-entire)
-
-(print evil-outer-text-objects-map)
+(define-key evil-outer-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
+(define-key evil-inner-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
 
 
 (provide 'evil-textobj-entire)
