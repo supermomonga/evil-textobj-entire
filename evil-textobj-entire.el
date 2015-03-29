@@ -37,7 +37,7 @@
   :group 'evil-textobj-entire)
 
 (evil-define-text-object evil-entire-entire-buffer (count &optional beg end type)
-  "Select range entire a character by which the command is followed."
+  "Select entire buffer"
   (evil-range (point-min) (point-max)))
 
 (define-key evil-outer-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
