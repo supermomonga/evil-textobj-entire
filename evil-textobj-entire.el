@@ -22,6 +22,9 @@
 ;;; Commentary:
 
 ;; It's a benri plugin.
+;; You can define maps as following:
+;; (define-key evil-outer-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
+;; (define-key evil-inner-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
 
 ;;; Code:
 
@@ -40,10 +43,6 @@
 (evil-define-text-object evil-entire-entire-buffer (count &optional beg end type)
   "Select entire buffer"
   (evil-range (point-min) (point-max)))
-
-(define-key evil-outer-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
-(define-key evil-inner-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
-
 
 (provide 'evil-textobj-entire)
 ;;; evil-textobj-entire.el ends here
