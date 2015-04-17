@@ -36,7 +36,7 @@
   :group 'evil)
 
 (defcustom evil-textobj-entire-key "e"
-  "Key for evil-inner-entire"
+  "Key for evil-textobj-entire"
   :type 'string
   :group 'evil-textobj-entire)
 
